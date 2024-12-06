@@ -1,0 +1,88 @@
+.map-container {
+  width: 100%;
+  height: 100vh; /* Hacer que el mapa ocupe toda la pantalla */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.professionals-container {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  z-index: 1; /* Asegurar que la lista de profesionales esté encima del mapa */
+  background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente para la lista de profesionales */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.professionals-list {
+  max-height: 300px; /* Limitar la altura máxima de la lista */
+  overflow-y: auto; /* Habilitar el desplazamiento vertical si es necesario */
+}
+
+.professional-details {
+  position: absolute;
+  top: 30%; /* Ajustar para centrar verticalmente */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Asegurar que la pantalla flotante esté encima de las tarjetas */
+  width: 80%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+ion-thumbnail img {
+  border-radius: 50%;
+}
+
+ion-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+ion-card-subtitle {
+  font-size: 1em;
+  color: #666;
+}
+
+ion-card-content p {
+  margin-bottom: 10px;
+}
+
+ion-button {
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .professionals-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .professional-details {
+    width: 90%;
+    padding: 15px;
+  }
+
+  ion-thumbnail img {
+    width: 40px;
+    height: 40px;
+  }
+
+  ion-label h2 {
+    font-size: 1.1em;
+  }
+
+  ion-button {
+    width: auto;
+  }
+}

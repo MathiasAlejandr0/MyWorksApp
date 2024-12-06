@@ -1,0 +1,147 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center; /* Centrar el texto */
+}
+
+.profile-picture-container {
+  position: relative; /* Permitir posicionar el botón dentro del contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px; /* Aumentar el tamaño del contenedor */
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 30px; /* Aumentar el margen para mejor separación */
+  background-color: #f0f0f0;
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.default-profile-icon {
+  font-size: 180px; /* Ajustar el tamaño del ícono por defecto */
+  color: #ccc;
+}
+
+.camera-icon-container {
+  position: absolute;
+  bottom: 10px; /* Asegurar que no se corte */
+  right: 10px; /* Mover hacia la izquierda para evitar cortes */
+  width: 45px; /* Aumentar el tamaño del icono de cámara */
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.camera-icon-container ion-icon {
+  font-size: 26px; /* Aumentar el tamaño del icono de cámara */
+}
+
+.plus-icon {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-list {
+  width: 100%;
+  max-width: 400px;
+}
+
+ion-button {
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  ion-list {
+    max-width: 300px;
+  }
+
+  .profile-picture-container {
+    width: 150px; /* Ajustar el tamaño para pantallas más pequeñas */
+    height: 150px;
+  }
+
+  .default-profile-icon {
+    font-size: 150px;
+  }
+
+  .camera-icon-container {
+    width: 40px;
+    height: 40px;
+  }
+
+  .camera-icon-container ion-icon {
+    font-size: 22px;
+  }
+
+  .plus-icon {
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  ion-list {
+    max-width: 350px;
+  }
+
+  .profile-picture-container {
+    width: 160px; /* Ajustar el tamaño para pantallas medianas */
+    height: 160px;
+  }
+
+  .default-profile-icon {
+    font-size: 160px;
+  }
+
+  .camera-icon-container {
+    width: 42px;
+    height: 42px;
+  }
+
+  .camera-icon-container ion-icon {
+    font-size: 24px;
+  }
+
+  .plus-icon {
+    font-size: 13px;
+    width: 19px;
+    height: 19px;
+  }
+}
