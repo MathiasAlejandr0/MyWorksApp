@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-avatar>
+        <img [src]="profileImage" alt="Imagen de Perfil">
+      </ion-avatar>
+      <ion-label>
+        <h3>Bienvenido, {{ userName }}!</h3>
+      </ion-label>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button fill="outline" color="danger" (click)="logout()">Cerrar Sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col size="12" size-md="6" offset-md="3">
+          <ion-card *ngFor="let service of services" class="service-card">
+            <ion-item (click)="navigateToServiceRequest(service.name)">
+              <ion-thumbnail slot="start">
+                <img [src]="service.icon" alt="{{ service.name }}">
+              </ion-thumbnail>
+              <ion-label>
+                <h2>{{ service.name }}</h2>
+                <p>{{ service.description }}</p>
+              </ion-label>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col size="12" size-md="6" offset-md="3">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Historial de Pedidos Finalizados</ion-card-title>
+              <ion-button fill="outline" color="danger" (click)="clearOrders()">Borrar Historial</ion-button>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list>
+                <ion-item *ngFor="let order of orders">
+                  <ion-label>
+                    <h2>{{ order.service }}</h2>
+                    <p>Profesional: {{ order.professional.name }}</p>
+                    <p>Fecha: {{ order.date | date:'short' }}</p>
+                    <p>Estado: {{ order.status }}</p>
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

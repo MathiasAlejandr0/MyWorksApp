@@ -1,9 +1,15 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.example.app',
   appName: 'MyWorksApp',
-  webDir: 'www'
+  webDir: 'www', // Asegúrate de que este valor sea correcto
+  bundledWebRuntime: false,
+  plugins: {
+    Camera: {
+      enabled: true,
+    },
+  },
 };
 
 export default config;

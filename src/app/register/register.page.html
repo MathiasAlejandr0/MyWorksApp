@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Crear Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <!-- Contenedor para la imagen de perfil -->
+    <div class="profile-picture-container">
+      <img *ngIf="profileImage" [src]="profileImage" alt="Imagen de Perfil" class="profile-picture">
+      <ion-icon *ngIf="!profileImage" name="person-circle-outline" class="default-profile-icon"></ion-icon>
+      <div class="camera-icon-container" (click)="presentActionSheet()">
+        <ion-icon name="camera-outline"></ion-icon>
+        <div class="plus-icon">+</div>
+      </div>
+    </div>
+    
+    <form (ngSubmit)="register()">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" type="submit">Crear Cuenta</ion-button>
+      <ion-button expand="block" fill="outline" (click)="navigateToLogin()">Volver a Login</ion-button>
+    </form>
+  </div>
+</ion-content>
